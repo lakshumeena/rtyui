@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <style>
+      #a
+      {
+        width: 25px;
+      }
+    </style>
+<button onclick="f(-1)">-</button>
+
+<input id="a" value = 1 >
+
+<button onclick="f(1)">+</button>
+
+<p id="c">Rs500</p>
+<script>
+
+function f(n)
+{
+  let x = document.getElementById("a").value;
+  x = parseInt(x);
+
+  let y =x+n;
+  if(y<1)
+  {
+    y=1;
+  }
+  document.getElementById("a").value = y;
+  let z=500;
+  document.getElementById("c").innerHTML = "Rs" +z*y;
+}
+</script>
+  
+  </body>
+</html>

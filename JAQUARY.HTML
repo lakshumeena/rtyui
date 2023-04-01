@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.comprased.js"></script>
+</head>
+
+<body>
+    <p>Home</p>
+    <p>About</p>
+    <p>Project</p>
+    <p>Contact</p>
+    <p>Other</p>
+
+    <button id="a">Show</button>
+    <button id="b">slideup</button>
+    <button id="c">slidedown</button>
+    <button id="d">slidetoogle</button>
+
+
+</body>
+<script>
+
+    $(document).ready(function () { $("p").click(function () { $("p").hide() }) });
+    $(document).ready(function () { $("#a").click(function () { $("p").show() }) });
+    $(document).ready(function () { $("#b").click(function () { $("p").slideUp() }) });
+    $(document).ready(function () { $("#c").click(function () { $("p").slideDown() }) });
+    $(document).ready(function () { $("#d").click(function () { $("p").slideToggle() }) });
+
+
+
+</script>
+
+</htmL>

@@ -1,0 +1,69 @@
+<html>
+
+<body>
+    <style>
+        button {
+            position: absolute;
+            top: 200px;
+            width: 50px;
+            height: 60px;
+            font-size: 20px;
+            background: none;
+            transition: 1s;
+        }
+
+        button:hover {
+            background-color: red;
+
+        }
+
+        #a {
+            border-radius: 12px 0px 0px 12px;
+            border: none;
+        }
+
+        #b {
+            right: 10px;
+            border: none;
+            border-radius: 0px 12px 12px 0px;
+
+        }
+
+        .image {
+            display: none;
+        }
+    </style>
+    <div class="image"><img src="first.jpg" width="100%"></div>
+    <div class="image"><img src="second.jpj.jpg" width="100%"></div>
+    <div class="image"><img src="third.jpg" width="100%"></div>
+    <div class="image"><img src="five.jpg" width="100%"></div>
+    <div class="image"><img src="fort.jpg" width="100%"></div>
+    <button id="a" onclick="d(-1)"></button>
+    <button id="b" onclick="d(1)"></button>
+    <script>
+        let s = 1;
+        slider(s);
+        function d(n) {
+            slider(s += n)
+        }
+        function slider(n) {
+            let i;
+            let slider = document.getElementsByClassName("image");
+            if (n < 1) {
+                s = slider.length;
+            }
+            if (n > slider.length) {
+                s = 1;
+            }
+            for (i = 0; i < slider.length; i++) {
+                slider[i].style.display = "none";
+            }
+            slider[s - 1].style.display = "block"
+        }
+    </script>
+
+
+
+</body>
+
+</html>

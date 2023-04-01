@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>light effact</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: black;
+        }
+        .cube{
+            position: relative;
+            width: 500px;
+            height: 500px;
+            transform-style: preserve-3d;
+            animation:animate 4s linear infinite;
+            
+        }
+        @keyframes animate{
+            0%
+            {
+                transform: rotateX(-30deg) rotateY(0deg);
+            }
+          100%
+           {
+                transform: rotatex(-30deg) rotateY(360deg);
+        }
+    }
+        .cube div{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+        }
+        .cube div span{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background:linear-gradient(#151515,#00ec00);
+            transform: rotateY(calc(90deg * var(--i)))translateZ(150px);
+
+        }
+        .top{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: #151515;
+            transform: rotateX(90deg) translateZ(150px);
+        }
+        .top::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+            height: 300px;
+            background: #00ec00;
+            transform: translateZ(-380px);
+            filter: blur(20px);
+            box-shadow: 0 0 120px rgba(0,255,0,0.2);
+
+        }
+        #a{
+            
+            background:linear-gradient(#7e0707,#c3bedb);
+        }
+          #b{ background:linear-gradient(#eaea0c,#00ec00);
+        }
+           #c{ background:linear-gradient(#e70bc9,#10d2f4);
+           }
+           #d{ background:linear-gradient(#e88e06,#031a03);
+           }
+        
+    </style>
+</head>
+<body>
+    <div class="cube">
+        <div class="top"></div>
+        <div>
+            <span style="--i:0;" id="a"></span>
+            <span style="--i:1;" id="b"></span>
+            <span style="--i:2;" id="c"></span>
+            <span style="--i:3;" id="d"></span>
+        </div>
+    </div>
+
+    
+</body>
+</html>

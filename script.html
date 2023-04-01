@@ -1,0 +1,73 @@
+<html>
+    <head>
+        <script src="jquery-3.6.4.min.js"></script>
+    </head>
+    <body>
+        <style>
+            header div
+            {
+                float: right;
+                margin-right: 10px;
+
+            }
+            header div a
+            {
+                margin-left: 10px;
+            }
+            #logo
+            {
+                font-size: 20px;
+                
+                float: left;
+            }
+
+            img
+            {
+                position: fixed;
+                right: 10px;
+                width: 40px;
+                top: 0px;
+                display: none;
+            }
+            @media (max-width:600px)
+            {
+                #logo
+                {
+                    float: none; 
+                }
+                header div
+                {
+                    float: none;
+                }
+                header div a
+                {
+                    display: block;
+                }
+                img
+                {
+                    display: block;
+                }
+            }
+        </style>
+        <header>
+            <center>
+            <a id="logo">LOGO</a>
+            
+            <div id="d">
+                <a href="#">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="#">HEHEHE</a>
+
+            </div>
+            </center>
+            <img src="img.png" id="raghav">
+        </header>
+
+
+        <script>
+            $(document).ready(function(){$("#raghav").click(function(){$("#d").fadeToggle()})});
+        </script>
+
+    </body>
+</html>

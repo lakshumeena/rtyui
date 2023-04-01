@@ -1,0 +1,35 @@
+<html>
+  <body>
+    <select id="b" onchange="f()">
+      <option>Choose a option</option>
+      <option>100</option>
+      <option>200</option>
+      <option>300</option>
+    </select>
+<p id="a">Choose a option for price</p>
+
+<script>
+  function  f()
+  {
+      let x = document.getElementById("b").value;
+      if( x == "100")
+      {
+        document.getElementById("a").innerHTML = "Rs 1000";
+      }
+      else if(x=="200")
+      {
+        document.getElementById("a").innerHTML = "Rs 2000";
+      }
+      else if(x=="300")
+      {
+        document.getElementById("a").innerHTML = "Rs 3000";
+      }
+      else
+      {
+        document.getElementById("a").innerHTML = "Choose a option for price";
+      }
+  }
+</script>
+  
+  </body>
+</html>

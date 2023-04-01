@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery-3.6.4.min.js"></script>
+</head>
+<body>
+    <style>
+    div
+        {
+            width: 30px;
+            height: 30px;
+            background-color: red;
+        position: absolute;
+        }
+    </style>
+    <p>hello</p>
+    <button id="a">hide click</button>
+    <button id="b">show click</button>
+    <button id="c">show and hide toggle</button>
+    <button id="d">swipe up</button>
+    <button id="e">swipe down</button>
+    <button id="f">Fade id</button>
+    <button id="g">Fade out</button>
+    <button id="h">Fade toggle</button>
+    <button id="i">delete</button>
+    <button id="j">animate</button>
+    <button id="k">break</button>
+    <div></div>
+
+
+<script>
+    $(document).ready(function(){$("#a").click(function(){$("p").hide()})});
+    $(document).ready(function(){$("#b").click(function(){$("p").show()})});
+    $(document).ready(function(){$("#c").click(function(){$("p").slideToggle()})});
+    $(document).ready(function(){$("#d").click(function(){$("p").slideUp()})});
+    $(document).ready(function(){$("#e").click(function(){$("p").slideDown()})});
+    $(document).ready(function(){$("#f").click(function(){$("p").fadeIn()})});
+    $(document).ready(function(){$("#g").click(function(){$("p").fadeOut()})});
+    $(document).ready(function(){$("#h").click(function(){$("p").fadeToggle()})});
+    $(document).ready(function(){$("#i").click(function(){$("p").empty()})});
+    $(document).ready(function(){$("#j").click(function(){$("div").animate({left:"100px"})})});
+    $(document).ready(function(){$("#j").click(function(){$("div").animate({top:"200px"})})});
+    $(document).ready(function(){$("#j").click(function(){$("div").animate({left:"0px"})})});
+    $(document).ready(function(){$("#j").click(function(){$("div").animate({top:"100px"})})});
+    $(document).ready(function(){$("#k").click(function(){$("div").stop()})});
+</script>
+</body>
+</html>

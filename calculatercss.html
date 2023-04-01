@@ -1,0 +1,90 @@
+<html> 
+    <head> 
+        <title>Calculator</title> 
+        <style> 
+            #outerdiv{ 
+                position:absolute; 
+                left:25em; 
+                top:10em; 
+                height: 41%; 
+                width:17.7%; 
+                background:black; 
+
+            } 
+            table tr td input{ 
+                width: 20em; 
+                height: 3em; 
+                background: rgb(191, 158, 158); 
+                color: aliceblue; 
+            } 
+            table tr td button{ 
+                height: 3em; 
+                width: 4em; 
+                padding: 5px; 
+                font-size: 16px; 
+                background: gray; 
+                color: aliceblue; 
+            } 
+            #wdh{ 
+                height: 6.2em; 
+                background: red; 
+            } 
+            #wdh1{ 
+                width: 8.2em; 
+            } 
+        </style> 
+    </head> 
+    <body> 
+        <div id="outerdiv"> 
+            <table> 
+                <tr> 
+                    <td colspan="4"><input id="screen"></td> 
+                </tr> 
+                <tr> 
+                    <td><button onclick="mc()">CLR</button></td> 
+                    <td><button onclick="f()">M+</button></td> 
+                    <td><button onclick="f('/')">/</button></td> 
+                    <td><button onclick="f('')"></button></td> 
+                </tr> 
+                <tr> 
+                    <td><button onclick="f(9)">9</button></td> 
+                    <td><button onclick="f(8)">8</button></td> 
+                    <td><button onclick="f(7)">7</button></td> 
+                    <td><button onclick="f('-')">-</button></td> 
+                </tr> 
+                <tr> 
+                    <td><button onclick="f(6)">6</button></td> 
+                    <td><button onclick="f(5)">5</button></td> 
+                    <td><button onclick="f(4)">4</button></td> 
+                    <td><button onclick="f('+')">+</button></td> 
+                </tr><tr> 
+                    <td><button onclick="f(3)">3</button></td> 
+                    <td><button onclick="f(2)">2</button></td> 
+                    <td><button onclick="f(1)">1</button></td> 
+                    <td rowspan="2" ><button id="wdh" onclick="eql('=')">=</button></td> 
+                </tr> 
+            </tr><tr> 
+                <td colspan="2" ><button id="wdh1" onclick="f(0)">0</button></td> 
+                <td ><button onclick="f"('.')</button>  </button></td> 
+            </tr> 
+                 
+                 
+            </table> 
+        </div> 
+
+
+        <script> 
+            function f(n){ 
+                let x = document.getElementById("screen").value+=n; 
+
+            } 
+            function eql(){ 
+                let y = document.getElementById("screen").value; 
+                document.getElementById("screen").value = eval(y); 
+            } 
+            function mc(){ 
+                document.getElementById("screen"). value = ""; 
+            } 
+        </script> 
+    </body> 
+</html>

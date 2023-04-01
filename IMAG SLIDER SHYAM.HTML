@@ -1,0 +1,65 @@
+<html>
+
+<body>
+    <style>
+        button {
+            position: absolute;
+            top: 35%;
+            height: 10vh;
+            width: 5vw;
+            border: 2px solid green;
+            font-size: 40px;
+            color: gray;
+        }
+
+        #btna {
+            border-radius: 0% 15% 15% 0%;
+        }
+
+        #btnb {
+            right: 0.55%;
+            border-radius: 15% 0% 0% 15%;
+        }
+
+        button:hover {
+            color: aqua;
+            background: darkgreen;
+        }
+    </style>
+
+    <div class="image"><img src="pexels-amine-m'siouri-2245436.jpg" width="100%" height="80%"></div>
+    <div class="image"><img src="pexels-amine-m'siouri-2245436.jpg" width="100%" height="80%"></div>
+    <div class="image"><img src="pexels-spencer-davis-4353638.jpg" width="100%" height="80%"></div>
+    <div class="image"><img src="pexels-amine-m'siouri-2245436.jpg" width="100%" height="80%"></div>
+    <button onclick="d(-1)" id="btna">
+        </button>
+            <button onclick="d(1)" id="btnb">></button>
+
+
+            <script>
+                let s = 1;
+                slider(s);
+                function d(n) {
+                    slider(s += n);
+                }
+
+                function slider(n) {
+                    let i;
+                    let sl = document.getElementsByClassName("image");
+
+                    if (n > sl.length) {
+                        s = 1;
+                    }
+                    if (n < 1) {
+                        s = sl.length;
+                    }
+
+                    for (i = 0; i < sl.length; i++) {
+                        sl[i].style.display = "none";
+                    }
+                    sl[s - 1].style.display = "block";
+                }
+            </script>
+</body>
+
+</html>

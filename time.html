@@ -1,0 +1,19 @@
+<html>
+    <body>
+        <script>
+            let x = new Date();
+            let h = x.getHours();
+            let m = x.getMinutes();
+            let s = x.getSeconds();
+            let mm = x.getMilliseconds();
+            if(h<12)
+            {
+            document.write(h +":"+ m + ":" + s + "am");
+            }
+            else
+            {
+                document.write(h +":"+ m + ":" + s + "pm");
+            }
+        </script>
+    </body>
+</html>

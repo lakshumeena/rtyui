@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: #111;
+        }
+        .container{
+            position: relative;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+        }
+        .ring{
+            position: relative;
+            width: 150px;
+            margin: -30px;
+            height: 150px;
+            border-radius: 50%;
+            border: 4px solid transparent;
+            border-top: 4px solid aqua;
+            animation: jatin 2s linear infinite;
+
+        }
+
+        @keyframes jatin{
+            0%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(360deg);
+            }
+        }
+        .ring::before{
+            content: '';
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 15px;
+            height: 15px;
+            background: aqua;
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px #24ecff33,
+            0 0 0 10px  #24ecff22,
+            0 0 20px #24ecff11,
+            0 0 20px aqua,
+            0 0 50px aqua;
+        }
+        .ring:nth-child(2){
+            animation: jatin2 2s linear infinite;
+            animation-delay: -1s;
+            border-top: 4px solid transparent;
+            border-left: 4px solid #93ff2d;
+        }
+        .ring:nth-child(2)::before{
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            top: initial;
+            left: 12px;
+            width: 15px;
+            height: 15px;
+            background: hsl(123, 100%, 50%);
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px #93ff2d33,
+            0 0 0 10px  #93ff2d22,
+            0 0 20px #93ff2d11,
+            0 0 20px #93ff2d,
+            0 0 50px #93ff2d;
+        }
+        @keyframes jatin2{
+            0%{
+                transform: rotate(360deg);
+            }
+            100%{
+                transform: rotate(0deg);
+            }
+        }
+
+        .ring:nth-child(3){
+            animation: jatin2 2s linear infinite;
+            animation-delay: -2s;
+            position: absolute;
+            top: -66.66px;
+            border-top: 4px solid transparent;
+            border-left: 4px solid #e41cf8;
+            
+        }
+        .ring:nth-child(3)::before{
+            content: '';
+            position: absolute;
+            bottom: 12px;
+            top: initial;
+            left: 12px;
+            width: 15px;
+            height: 15px;
+            background: #e41cf8;
+            border-radius: 50%;
+            box-shadow: 0 0 0 5px #e41cf833,
+            0 0 0 10px  #e41cf822,
+            0 0 20px #e41cf811,
+            0 0 20px #e41cf8,
+            0 0 50px #e41cf8;
+        }
+        .container p{
+            position: absolute;
+            color: white;
+            font-size: 2.5em;
+            font-family: Arial, Helvetica, sans-serif;
+            bottom: -80px;
+            letter-spacing: 0.15em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <div class="ring"></div>
+        <p>Loding...</p>
+    </div>
+</body>
+</html>

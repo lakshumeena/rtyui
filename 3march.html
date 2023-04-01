@@ -1,0 +1,58 @@
+<html>
+<head>
+
+</head>
+<body>
+    <style>
+        div {
+            display: inline-block;
+            width: 200px;
+            height: 100px;
+            
+        }
+    </style>
+    <div>
+        <h1 id="a"></h1>
+    </div>
+    <div>
+        <h1 id="b"></h1>
+    </div>
+    <div>
+        <h1 id="c"></h1>
+    </div>
+    <div>
+        <h1 id="e"></h1>
+    </div>
+    <div>
+        <h1 id="d"></h1>
+    </div>
+
+    <script>
+        function f() {
+            let x = new Date();
+            let h = x.getHours();
+            let m = x.getMinutes();
+            let s = x.getSeconds();
+            let mm = x.getMilliseconds();
+            if (h > 11) {
+                document.getElementById("a").innerHTML = h + ": ";
+                document.getElementById("b").innerHTML = m + ": ";
+                document.getElementById("c").innerHTML = s + ": ";
+                document.getElementById("e").innerHTML = mm + ": ";
+                document.getElementById("d").innerHTML = "PM";
+            }
+            else {
+                document.getElementById("a").innerHTML = h + ": ";
+                document.getElementById("b").innerHTML = m + ": ";
+                document.getElementById("c").innerHTML = s + ": ";
+                document.getElementById("e").innerHTML = mm + ": ";
+                document.getElementById("d").innerHTML = "AM";
+            }
+            setTimeout("f()", 1);
+        }
+        f();
+
+    </script>
+</body>
+
+</html>

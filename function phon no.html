@@ -1,0 +1,25 @@
+<html>
+    <body>
+        phone no:
+            <input type="number" id="a">
+            <input type="submit" onclick="f()">
+     
+        <script>
+            function f()
+            {
+         let x =document.getElementById("a").value;
+
+         let y = /^[0-9]{10,14}$/;
+         let z = x.search(y);
+         if(z==0)
+         {
+            document.write("Accurate");
+         }
+         else
+         {
+            alert("please enter a correct phone no");
+         }
+            }
+        </script>
+    </body>
+</html>

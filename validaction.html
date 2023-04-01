@@ -1,0 +1,66 @@
+<html>
+  <body>
+
+ Name: <input type="text" id="a"><br><br>
+ Phone no: <input type="text" id="d"><br><br>
+ Password: <input type="password" id="b"><br><br>
+ Confirm Password: <input type="password" id="c">
+ <input type="submit" onclick="f()">
+  <script>
+function f()
+{
+  let x = document.getElementById("a").value;
+  let y = document.getElementById("b").value;
+  let z = document.getElementById("c").value;
+  let phone = document.getElementById("d").value;
+  
+  //validation are here
+  let regx = /^[A-Z]+\w+$/;
+  let regphone = /^[0-9]{10}$/;
+
+  let xr,phoner,passwordr;
+
+  //validation for name starting with capital letter 
+  if(x.search(regx) == 0)
+  {
+    xr = 1;
+    document.getElementById("a").style.border = "1px black solid";
+  }
+  else
+  {
+    document.getElementById("a").style.border = "1px red solid";
+  }
+
+//phone number validation checking
+
+  if(phone.search(regphone) == 0)
+  {
+    phoner = 1;
+    document.getElementById("d").style.border = "1px black solid";
+  }
+  else
+  {
+    document.getElementById("d").style.border = "1px red solid";
+  }
+
+//validation for password and confirm password
+  if(y==z)
+  {
+    passwordr=1;
+    document.getElementById("b").style.border = "1px black solid";
+    document.getElementById("c").style.border = "1px black solid";
+  }
+  else
+  {
+    document.getElementById("b").style.border = "1px red solid";
+    document.getElementById("c").style.border = "1px red solid";
+  }
+
+if(xr==1 && phoner == 1 && passwordr ==1)
+{
+  document.write("Access Granted");
+}
+}
+  </script>
+  </body>
+</html>

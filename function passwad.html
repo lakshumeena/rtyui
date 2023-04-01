@@ -1,0 +1,31 @@
+
+        <html>
+    <body>
+        <form>
+            <label>Password</label>
+            <input type="text" id="a">
+            <label>Confirm Password</label>
+            <input type="text" id="b">
+            <input type="submit" onclick="f()">
+        </form>
+        <script>
+            function f()
+            {
+            let x = document.getElementById("a").value
+            let y = document.getElementById("b").value
+
+            if(x==y)
+            {
+                document.write("Access granted");
+            }
+    
+            else
+            {
+                // alert("wrong password");
+                document.getElementById("b").style.border="2px solid red";
+            }
+        }
+        </script>
+    </body>
+</html>
+  

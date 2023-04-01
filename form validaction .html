@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <fieldset>
+    <legend>
+      <h1>
+        Student Registration Form
+      </h1>
+    </legend>
+    <div>
+      FIRST NAME:<input type="text" placeholder="first name" id="a">
+    </div>
+    <br>
+    <div>
+      LAST NAME: <input type="text" placeholder="last name" id="b"><br>
+    </div>
+    <br>
+    <div>
+      PHONE NO: <input type="number" placeholder="phone" id="c"><br>
+    </div>
+    <br>
+    <div>
+      D.O.B: <input type="date" placeholder="d.o.b" id="d"><br>
+    </div>
+    <br>
+    <div>
+      EMAIL: <input type="email" placeholder="email" id="e"><br>
+    </div>
+    <br>
+    <div>
+      PASSWORS: <input type="password" placeholder="password" id="f"><br>
+    </div>
+    <br>
+    <div>
+      CONFIRM PASSWORS: <input type="password" placeholder="password" id="g"><br>
+    </div>
+    <br>
+    <div>
+      ADDRESS <input type="text" placeholder="addres" id="h"><br>
+    </div>
+    <br>
+    <div>
+      CITY:
+      <select id="i">
+        <option>jaipur</option>
+        <option>dausa</option>
+        <option>alwar</option>
+        <option>bhartpur</option>
+        <option>kota</option>
+      </select>
+
+      STATE:
+      <select id="j">
+        <option>rajsthan</option>
+        <option>hariyana</option>
+        <option>mp</option>
+        <option>jharkhand</option>
+        <option>jammu&kashmir</option>
+      </select>
+    </div>
+    <div>
+      <br>
+      GENDER <br>
+      MALE:<input type="radio" id="k" value="male">
+      FEMALE:<input type="radio" id="k" value="female">
+      OTHER:<input type="radio" id="k" value="others">
+    </div>
+    <br>
+    <div>
+      COURSE NAME
+      <select id="l">
+        <option></option>
+        <option>web desinging</option>
+        <option>marketing</option>
+        <option>java</option>
+        <option>c++</option>
+        <option>hecking</option>
+      </select>
+    </div>
+    <div>
+      <input type="submit" onclick="f()" value="submit">
+      <input type="reset" value="reset">
+    </div>
+  </fieldset>
+
+  <script>
+    function f() {
+
+      //values are saved in variables
+      let aa = document.getElementById("a").value;
+      let bb = document.getElementById("b").value;
+      let cc = document.getElementById("c").value;
+      let dd = document.getElementById("d").value;
+      let ee = document.getElementById("e").value;
+      let ff = document.getElementById("f").value;
+      let gg = document.getElementById("g").value;
+      let hh = document.getElementById("h").value;
+      let ii = document.getElementById("i").value;
+      let jj = document.getElementById("j").value;
+      let kk = document.getElementById("k").value;
+      let ll = document.getElementById("l").value;
+
+
+      //validation that are needed to be used
+
+      let regab = /^[a-z A-Z]+$/;
+      let regc = /^[0-9]{10}$/;
+      let rege = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)\.(\w+[\.-]?\w{2,5})+$/;
+      let regfg = /^(?=.[a-z])(?=.[A-Z])(?=.[0-9])(?=.[^\w]).{8,32}$/;
+    }
+    aa = aa.search(regab);
+    bb = bb.search(regab);
+    cc = cc.search(regc);
+    ee = ee.search(rege);
+    ff = ff.search(regfg);
+    gg = gg.search(regfg);
+
+    if (aa == 0) {
+      document.getElementById("a").style.border = "2px solid green";
+    } else {
+      alert("enter your first name properly");
+    }
+    if (bb == 0) {
+      document.getElementById("b").style.border = "2px solid green";
+    } else {
+      alert("enter your last name properly");
+      if (cc == 0) {
+        document.getElementById("c").style.border = "2px solid green";
+      } else {
+        alert("enter your mobile number properly");
+      }
+    }
+    if (ee == 0) {
+      document.getElementById("e").style.border = "2px solid green";
+    } else {
+      alert("enter your email id properly");
+    }
+    if (ff == 0) {
+      document.getElementById("f").style.border = "2px solid green";
+    } else {
+      alert("enter your passwad properly");
+      if (gg == 0) {
+        document.getElementById("g").style.border = "2px solid green";
+      } else {
+        alert("enter your conform passwd properly");
+      }
+    }
+
+  </body>
+</html>

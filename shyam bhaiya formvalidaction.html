@@ -1,0 +1,204 @@
+
+<html>
+    <head>
+        <style>
+            th{
+                text-align: left;
+            }
+            #regform{
+                border: 4px solid green;
+                border-radius: 0%;
+                width: 35em;
+                height: 42em;
+                background: pink;
+                position: absolute;
+                left: 30em;
+            }
+            h1{
+                color: red;
+                text-align: center;
+            }
+            table{
+                background-color: rgb(138, 208, 208);
+                position: absolute;
+                left: 6.5em;
+                
+            }
+
+        </style>
+    </head>
+
+    <body>
+        <div id="regform">
+            <h1>Registration Form</h1>
+            <table>
+                <tr>
+                    <th>First Name</th>
+                    <td><input type="text" id="name" required></td>
+                </tr>
+                <tr>
+                    <th>Middle Name</th>
+                    <td><input type="text"id="name"></td>
+                </tr>
+                <tr>
+                    <th>Last Name</th>
+                    <td><input type="text"id="name"></td>
+                </tr>
+                <tr>
+                    <th>Mobile No</th>
+                    <td><input type="number"id="mobile" required></td>
+                </tr>
+                <tr>
+                    <th>email</th>
+                    <td><input type="email"id="emailid" required></td>
+                </tr>
+                <tr>
+                    <th>Gender</th>
+                    <td>
+                        <input type="radio"id="gender"value="male" name="gender">Male
+                        <input type="radio"id="gender"value="female" name="gender">Female
+                    </td>             
+                </tr>
+                <tr>
+                    <th>Date of Birth</th>
+                    <td><input type="date"id="date" required></td>
+                </tr>
+                <tr>
+                    <th>Language</th>
+                    <td>Hindi &nbsp;&nbsp;English &nbsp;&nbsp;Punjabi &nbsp;&nbsp;Other</td>
+                </tr>
+                <tr>
+                    <th>Speak</th>
+                    <td>
+                        &nbsp;&nbsp;<input type="checkbox">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Write</th>
+                    <td>
+                        &nbsp;&nbsp;<input type="checkbox">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="checkbox">
+                    </td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td><textarea rows="10" cols="10" name="address" id="address" required></textarea></td>
+                </tr>
+                <tr>
+                    <th>Citizenship</th>
+                    <td><select>
+                        <option>Choose country</option>
+                        <option>Indian</option>
+                        <option>U.S.A.</option>
+                        <option>U.A.E.</option>
+                        <option>Other</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <th>State</th>
+                    <td><select>
+                        <option>Choose a state&nbsp;</option>
+                        <option>Rajashtan</option>
+                        <option>Punjab</option>
+                        <option>Gujrat</option>
+                        <option>Other</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <th>City</th>
+                    <td><select>
+                        <option>Choose a city&nbsp;</option>
+                        <option>Bikaner</option>
+                        <option>Jaipur</option>
+                        <option>Ajmer</option>
+                        <option>Other</option>
+                    </select></td>
+                </tr>
+                <tr>
+                    <th>PIN</th>
+                    <td><input type="number"id="pin" required></td>
+                </tr>
+                <tr>
+                    <th>Upload Photo</th>
+                    <td><input type="file"id="photo" required></td>
+                </tr>
+                <tr>
+                    <th>Upload Sign</th>
+                    <td><input type="file"id="sign"required></td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td> <input type="submit" onclick="submit()" id="submitbtn"></td>
+                </tr>
+            </table>
+            <p id="finalmsg"></p>
+           
+           
+        </div>
+
+
+        <script>
+            
+
+            function submit(){
+                let xname=document.getElementById("name").value;
+                let xmobile = document.getElementById("mobile").value;
+                let xemailid = document.getElementById("emailid").value;
+                let xdate = document.getElementById("date").value;
+                let xpin = document.getElementById("pin").value;
+                let xphoto = document.getElementById("photo").value;
+                let xsign = document.getElementById("sign");
+
+                let regname = /^[a-z A-Z]+$/;
+                let regmobile = /^[0-9]{10}$/;
+                let regemail = /^\w+([\.-]?\w+)@\w+([\.-]?\w+)\.(\w+[\.-]?\w{2,5})+$/;
+                let regpin = /^[0-9]{6}$/;
+                let regphoto = /(\.jpg| \.jpeg|)/
+                
+                xname = xname.search(regname);
+                xmobile = xmobile.search(regmobile);
+                xemailid = xemailid.search(regemail);
+                xpin = xpin.search(regpin);
+
+                if(xname == 0){
+                    document.getElementById("name").style.border = "2px solid green";
+                }else{
+                    alert("enter your first name properly");
+                }
+                if(xmobile == 0){
+                    document.getElementById("mobile").style.border = "2px solid green";
+                }else{
+                    alert("Mobile no. should be of 10 digit");
+                }
+                if(xemailid == 0){
+                    document.getElementById("emailid").style.border = "2px solid green";
+                }else{
+                    alert("enter mail address properly");
+                }
+                if(xpin == 0){
+                    document.getElementById("pin").style.border = "2px solid green";
+                }else{
+                    alert("PIN no. shoud be of 6 digit");
+                }
+                if(xphoto == 0){
+                    document.getElementById("photo").style.border = "2px solid green";
+                }else{
+                    alert("upload photo");
+                }
+
+                if(xname ==0 && xmobile ==0 && xemailid ==0 && xpin == 0 && xphoto == 0){
+                    document.write("your form has been submitted successfully");
+                }
+                
+            }
+
+
+        </script>
+        
+    </body>
+</html>

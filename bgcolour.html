@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <h1 id="a">samyak computer</h1>
+        <input id="ab" type="color">
+        <input id="bb" type="color">
+        <input type="number" id="abc">
+        <button onclick="color()">color</button> 
+        
+         <script>
+            function color()
+            {
+                let x = document.getElementById("ab").value;
+                let y = document.getElementById("bb").value;
+                let z = document.getElementById("abc").value;
+                
+
+                document.getElementById("a").style.color =x;
+                document.getElementById("a").style.backgroundColor =y;
+                document.getElementById("a").style.fontSize =z+"px";
+            }
+         </script>
+
+    </body>
+</html>

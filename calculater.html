@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="a"><br>
+    <button onclick="f(1)">1</button>
+    <button onclick="f(2)">2</button>
+    <button onclick="f(3)">3</button><br>
+    <button onclick="f(4)">4</button>
+    <button onclick="f(5)">5</button>
+    <button onclick="f(6)">6</button><br>
+    <button onclick="f(7)">7</button>
+    <button onclick="f(8)">8</button>
+    <button onclick="f(9)">9</button><br>
+    <button onclick="f(0)">0</button>
+    <button onclick="f('.')">.</button>
+    <button onclick="f('+')">+</button>
+    <button onclick="f('-')">-</button><br>
+    <button onclick="f('/')">/</button>
+    <button onclick="f('*')">*</button>
+    <button onclick="evl()">=</button>
+    <button onclick="CLR()">CLR</button><br>
+    <script>
+        function f(n)
+        {
+            document.getElementById("a").value += n;
+        }
+
+        function evl()
+        {
+            let y = document.getElementById("a").value
+            document.getElementById("a").value  = eval(y);
+        }
+        function CLR()
+        {
+            document.getElementById("a").value = "";
+        }
+    </script>
+</body>
+</html>
